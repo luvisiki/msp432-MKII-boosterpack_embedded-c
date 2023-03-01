@@ -8,8 +8,8 @@
 #ifndef BUTTONS_BUTTONS_H_
 #define BUTTONS_BUTTONS_H_
 
-#include <ti/devices/msp432p4xx/driverlib/driverlib.h>
-#include <ti/grlib/grlib.h>
+#include "msp.h"
+#include "msp432p401r.h"
 #include <stdint.h>
 
 void init_buttons (void);

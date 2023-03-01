@@ -34,7 +34,6 @@ void main(void)
             }
             if (read_button_bottom() == 1) //TODO: Go down the menu if bottom button is pressed
             {
-                printf("bottom button push! \n");
                 menu_option = (menu_option+1)%3;
 
                 //TODO: Add 1 to menu_option taking care that there are 3 options
