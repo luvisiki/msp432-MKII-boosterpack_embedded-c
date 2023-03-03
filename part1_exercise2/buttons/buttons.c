@@ -13,13 +13,13 @@ void init_buttons(void)
     P5->SEL1 &= ~BIT1;
     P5->DIR &= ~BIT1; // set GPIO
 //    P5->REN |= BIT1;  // set Register,Don't enable pullup resistor, there is a resistor in the PCB.
-    P5->OUT |= BIT1;  // pull up set
+//    P5->OUT |= BIT1;  // pull up set , once you use fsm there is no necessary to set pull up
 
     P3->SEL0 &= ~BIT5;
     P3->SEL1 &= ~BIT5;
     P3->DIR &= ~BIT5;
 //    P3->REN |= BIT5;
-    P3->OUT |= BIT5;
+//    P3->OUT |= BIT5;
 }
 
 uint8_t read_button_bottom(void)
