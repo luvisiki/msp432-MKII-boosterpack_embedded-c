@@ -80,7 +80,7 @@ uint8_t button_bottom_fsm(void)
 
 extern void PORT3_IRQHandler(void)
 {
-//    uint8_t button_bottom_flag = (P3->IFG & BIT5);
+
     if (P3->IFG & BIT5) // check the pin raised the interrupt
     {
         P3->IFG &= ~BIT5;
