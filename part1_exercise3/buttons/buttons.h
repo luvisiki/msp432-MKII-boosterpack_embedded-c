@@ -12,9 +12,12 @@
 #include "msp432p401r.h"
 #include <stdint.h>
 
+extern uint8_t button_bottom_flag;  //global valueable.
+
 void init_buttons (void);
 uint8_t read_button_bottom (void);
 uint8_t button_bottom_fsm(void);
+void init_buttons_int(void);
 
 #endif /* BUTTONS_BUTTONS_H_ */
 

@@ -14,12 +14,13 @@ void main(void)
     //WARNING: always declare variables at the very beginning of function
     uint8_t menu, menu_option, game, error;
 
+
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;   // Stop WDT
 
     // Enable global interrupt and initialize
     _enable_interrupts();
     Init_Game(); //Requires interrupts
-    init_buttons();
+    init_buttons_int(); //    init_buttons() upgrade-> init_buttons_int()
 
     while (1)  //Super Loop
     {
@@ -32,10 +33,10 @@ void main(void)
             {
                 show_error("PARAM", "ERROR");
             }
-            if (button_bottom_fsm() == 1) //TODO: Go down the menu if bottom button is pressed
+            if (button_bottom_flag == 1) //TODO: Go down the menu if bottom button is pressed
             {
-                menu_option = (menu_option+1)%3;
-
+                menu_option = (menu_option + 1) % 3;
+                button_bottom_flag =0;
                 //TODO: Add 1 to menu_option taking care that there are 3 options
             }
             if (foo()) //TODO: Choose the color if the upper buttons is pressed
