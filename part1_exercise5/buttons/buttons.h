@@ -12,9 +12,9 @@
 #include "msp432p401r.h"
 #include <stdint.h>
 
-static uint8_t button_bottom_flag;  //global valueable.exercise4: change into static
-static uint8_t button_upper_flag;
-static uint8_t button_joystick_flag;
+//static uint8_t button_bottom_flag;  //global valueable.exercise4: change into static
+//static uint8_t button_upper_flag;
+//static uint8_t button_joystick_flag;
 
 void init_buttons (void);
 uint8_t read_button_bottom (void);

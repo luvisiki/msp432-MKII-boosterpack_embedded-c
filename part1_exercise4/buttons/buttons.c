@@ -80,17 +80,14 @@ uint8_t button_bottom_fsm(void)
 
 uint8_t check_and_clear_bb_flag(void)
 {
-    uint8_t value;
-    if (button_bottom_flag == 1)
-    {
-        value = button_bottom_flag;
-        button_bottom_flag = 0;
-        return value;
-
-    }
-    else
-        return 0;
-
+    uint8_t copy;
+    uint32_t states;
+    states = __get_interrupt_state();
+    __disable_interrupt();
+    copy = button_bottom_flag;
+    button_bottom_flag=0;
+    __set_interrupt_state(states);
+    return copy;
 }
 
 extern void PORT3_IRQHandler(void)

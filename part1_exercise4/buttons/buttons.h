@@ -12,6 +12,7 @@
 #include "msp432p401r.h"
 #include <stdint.h>
 
+
 static uint8_t button_bottom_flag;  //global valueable.exercise4: change into static
 
 void init_buttons (void);
