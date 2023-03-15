@@ -18,6 +18,8 @@
 
 void init_buttons (void);
 uint8_t read_button_bottom (void);
+uint8_t read_upper_bottom (void);
+
 uint8_t button_bottom_fsm(void);
 void init_buttons_int(void);
 uint8_t check_and_clear_bb_flag (void); //button_bottom

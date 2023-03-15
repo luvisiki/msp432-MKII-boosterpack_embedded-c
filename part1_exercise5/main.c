@@ -44,7 +44,7 @@ void main(void)
             if (check_and_clear_bj_flag()) // TODO: if joystick button end menu loop and go to next loop
             {
                 menu = 0;
-                break;
+
                 // TODO: How do you end the menu loop?
             }
         }
@@ -56,14 +56,15 @@ void main(void)
             {
                 Draw_Road();
                 Draw_Car();
-                if (check_and_clear_bu_flag()) // TODO: if upper button is pressed, update speed
+                if (read_upper_bottom()) // TODO: if upper button is pressed, update speed
                 {
                     // TODO: call function to increase speed one unit
+                    change_speed(1);
                 }
                 if (check_and_clear_bj_flag()) // TODO: if joystick button is pressed, end game loop
                 {
                     game = 0;
-                    break;
+
                     // TODO: How do you end the game loop?
                 }
                 // TODO: using the analog joystick, move car left and right
