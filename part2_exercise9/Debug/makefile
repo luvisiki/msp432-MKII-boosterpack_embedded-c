@@ -11,6 +11,7 @@ ORDERED_OBJS += \
 "./main.obj" \
 "./startup_msp432p401r_ccs.obj" \
 "./system_msp432p401r.obj" \
+"./Analog/analog.obj" \
 "./LED/led.obj" \
 "./buttons/buttons.obj" \
 "../game.lib" \
@@ -26,9 +27,11 @@ RMDIR := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include Analog/subdir_vars.mk
 -include LED/subdir_vars.mk
 -include buttons/subdir_vars.mk
 -include subdir_rules.mk
+-include Analog/subdir_rules.mk
 -include LED/subdir_rules.mk
 -include buttons/subdir_rules.mk
 -include objects.mk
@@ -148,8 +151,8 @@ part2_exercise9.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" "LED/led.obj" "buttons/buttons.obj" 
-	-$(RM) "main.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" "LED/led.d" "buttons/buttons.d" 
+	-$(RM) "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" "Analog/analog.obj" "LED/led.obj" "buttons/buttons.obj" 
+	-$(RM) "main.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" "Analog/analog.d" "LED/led.d" "buttons/buttons.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

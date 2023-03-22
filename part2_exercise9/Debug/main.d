@@ -19,9 +19,12 @@ main.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/CMSIS/core_cm4.h
 main.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 main.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 main.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/system_msp432p401r.h
+main.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdio.h
+main.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdarg.h
 main.obj: ../game.h
 main.obj: ../buttons/buttons.h
 main.obj: ../LED/led.h
+main.obj: ../Analog/analog.h
 
 ../main.c:
 
@@ -61,9 +64,15 @@ main.obj: ../LED/led.h
 
 /Applications/ti/ccs1220/ccs/ccs_base/arm/include/system_msp432p401r.h:
 
+/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdio.h:
+
+/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdarg.h:
+
 ../game.h:
 
 ../buttons/buttons.h:
 
 ../LED/led.h:
+
+../Analog/analog.h:
 
