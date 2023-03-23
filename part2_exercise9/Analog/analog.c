@@ -4,6 +4,7 @@
 
 #include "analog.h"
 #include <stdint.h>
+
 volatile long temp;
 
 void init_adc14(void)
@@ -21,6 +22,8 @@ void init_adc14(void)
     ADC14->CTL0 |= ADC14_CTL0_ON;           //ADC on
 
     ADC14->CTL1 |= ADC14_CTL1_RES__14BIT;   //set ADC14 resolution to 14bits
+    P5->SEL0 |= BIT5;
+    P5->SEL1 |= BIT5;
 
 }
 
@@ -28,10 +31,12 @@ void config_temp(void)
 {
     ADC14->CTL1 |= ADC14_CTL1_TCMAP;        //ADC internal temperature sensor channel is selected for ADC input channel
     REF_A->CTL0 |= REF_A_CTL0_ON;           //switch on the voltage reference and enable powering the temperature sensor.
-    REF_A->CTL0 &= ~REF_A_CTL0_TCOFF;
+    REF_A->CTL0 &= ~REF_A_CTL0_TCOFF;       //enable temperature sensor
 
     ADC14->MCTL[0] |= (ADC14_MCTLN_VRSEL_0 |    //set combinations of VR+ and VR-
-                        ADC14_MCTLN_INCH_0);    //set input channel.
+                        ADC14_MCTLN_INCH_22);    //set input channel.
+    ADC14->MEM[0]=0;
+    //ADC14->IFGR0 |= ADC14_CLRIFGR0_CLRIFG0;
     ADC14->IER0 |=  ADC14_IER0_IE0;             //set E0 interrupt enable.
     NVIC_EnableIRQ(ADC14_IRQn);
 }   
@@ -49,6 +54,7 @@ extern void ADC14_IRQHandler(void)
     {
         temp = ADC14->MEM[0];     
         printf("value: %d \n",temp);
+        ADC14->CLRIFGR0 |= ADC14_CLRIFGR0_CLRIFG0;
     }
     
 }

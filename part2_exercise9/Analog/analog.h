@@ -5,7 +5,8 @@
 #ifndef MSP432_MKII_BOOSTERPACK_EMBEDDED_C_ANALOG_H
 #define MSP432_MKII_BOOSTERPACK_EMBEDDED_C_ANALOG_H
 
-#include "msp432p401r.h"
+//#include "msp432p401r.h"
+#include "msp.h"
 #include <stdint.h>
 #include <stdio.h>
 

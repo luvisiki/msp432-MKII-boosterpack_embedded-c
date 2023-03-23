@@ -12,7 +12,6 @@ ORDERED_OBJS += \
 "./startup_msp432p401r_ccs.obj" \
 "./system_msp432p401r.obj" \
 "./buttons/buttons.obj" \
-"../game.lib" \
 "../msp432p401r.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -131,11 +130,11 @@ EXE_OUTPUTS__QUOTED += \
 
 
 # All Target
-all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
+all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "part1_exercise3.out"
 
 # Tool invocations
-part1_exercise3.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
+part1_exercise3.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
 	"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"part1_exercise3.map" --heap_size=1024 --stack_size=512 -i"/Applications/ti/ccs1220/ccs/ccs_base/arm/include" -i"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="part1_exercise3_linkInfo.xml" --rom_model -o "part1_exercise3.out" $(ORDERED_OBJS)

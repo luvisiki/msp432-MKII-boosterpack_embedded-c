@@ -2,6 +2,7 @@
 
 Analog/analog.obj: ../Analog/analog.c
 Analog/analog.obj: ../Analog/analog.h
+Analog/analog.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/msp.h
 Analog/analog.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/msp432p401r.h
 Analog/analog.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdint.h
 Analog/analog.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/_ti_config.h
@@ -25,6 +26,8 @@ Analog/analog.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7
 ../Analog/analog.c:
 
 ../Analog/analog.h:
+
+/Applications/ti/ccs1220/ccs/ccs_base/arm/include/msp.h:
 
 /Applications/ti/ccs1220/ccs/ccs_base/arm/include/msp432p401r.h:
 

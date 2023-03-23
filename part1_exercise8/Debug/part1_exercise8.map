@@ -1,34 +1,32 @@
 ******************************************************************************
                   TI ARM Linker Unix v20.2.7                   
 ******************************************************************************
->> Linked Wed Mar 15 15:41:19 2023
+>> Linked Thu Mar 23 14:01:02 2023
 
 OUTPUT FILE NAME:   <part1_exercise8.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00004889
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000a61
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  MAIN                  00000000   00040000  00005bb4  0003a44c  R  X
+  MAIN                  00000000   00040000  00000ad4  0003f52c  R  X
   INFO                  00200000   00004000  00000000  00004000  R  X
-  SRAM_CODE             01000000   00010000  0000031a  0000fce6  RW X
-  SRAM_DATA             20000000   00010000  0000031a  0000fce6  RW  
+  SRAM_CODE             01000000   00010000  00000208  0000fdf8  RW X
+  SRAM_DATA             20000000   00010000  00000208  0000fdf8  RW  
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00000000    00000000    00005bb8   00005bb8    r-x
+00000000    00000000    00000ad4   00000ad4    r-x
   00000000    00000000    000000e4   000000e4    r-- .intvecs
-  000000e4    000000e4    00004a54   00004a54    r-x .text
-  00004b38    00004b38    0000100c   0000100c    r-- .const
-  00005b48    00005b48    00000070   00000070    r-- .cinit
-20000000    20000000    0000011a   00000000    rw-
-  20000000    20000000    000000b8   00000000    rw- .data
-  200000b8    200000b8    00000062   00000000    rw- .bss
+  000000e4    000000e4    000009d4   000009d4    r-x .text
+  00000ab8    00000ab8    0000001c   0000001c    r-- .cinit
+20000000    20000000    00000008   00000000    rw-
+  20000000    20000000    00000008   00000000    rw- .data
 2000fe00    2000fe00    00000200   00000000    rw-
   2000fe00    2000fe00    00000200   00000000    rw- .stack
 
@@ -41,160 +39,34 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    000000e4     
                   00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
 
-.text      0    000000e4    00004a54     
-                  000000e4    00000a4e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
-                  00000b32    0000047e     game.lib : string.obj (.text:Graphics_drawString)
-                  00000fb0    000003f4              : Crystalfontz128x128_ST7735.obj (.text)
-                  000013a4    00000354     system_msp432p401r.obj (.text)
-                  000016f8    000002b8     buttons.obj (.text)
-                  000019b0    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
-                  00001c20    0000026e     game.lib : circle.obj (.text:Graphics_drawCircle)
-                  00001e8e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
-                  00001e90    00000248     game.lib : road.obj (.text)
-                  000020d8    0000022a              : circle.obj (.text:Graphics_fillCircle)
-                  00002302    00000002     --HOLE-- [fill = 0]
-                  00002304    000001ec              : lcd.obj (.text)
-                  000024f0    000001d0     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_g)
-                  000026c0    000001b6                                   : fd_add_t2.asm.obj (.text)
-                  00002876    00000180     game.lib : line.obj (.text:Graphics_clipLine)
-                  000029f6    00000174              : line.obj (.text:Graphics_drawLine)
-                  00002b6a    00000002     --HOLE-- [fill = 0]
-                  00002b6c    0000014c              : menu.obj (.text)
-                  00002cb8    0000013c     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_e)
-                  00002df4    00000138     led.obj (.text)
-                  00002f2c    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.asm.obj (.text)
-                  00003062    00000002     --HOLE-- [fill = 0]
-                  00003064    00000128     game.lib : car.obj (.text)
-                  0000318c    00000124     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:fcvt)
-                  000032b0    00000112     game.lib : rectangle.obj (.text:Graphics_fillRectangle)
-                  000033c2    00000002     --HOLE-- [fill = 0]
-                  000033c4    00000110     rtsv7M4_T_le_v4SPD16_eabi.lib : s_scalbn.c.obj (.text:scalbn)
-                  000034d4    000000fc                                   : fd_mul_t2.asm.obj (.text)
-                  000035d0    000000fa     game.lib : string.obj (.text:Graphics_getStringWidth)
-                  000036ca    00000002     --HOLE-- [fill = 0]
-                  000036cc    000000f8     rtsv7M4_T_le_v4SPD16_eabi.lib : s_floor.c.obj (.text:floor)
-                  000037c4    000000f0     main.obj (.text)
-                  000038b4    000000c4     rtsv7M4_T_le_v4SPD16_eabi.lib : s_round.c.obj (.text:round)
-                  00003978    000000b1                                   : _printfi.c.obj (.text:_ltostr)
-                  00003a29    00000001     --HOLE-- [fill = 0]
-                  00003a2a    000000b0     game.lib : spi.o (.text:SPI_initMaster)
-                  00003ada    00000002     --HOLE-- [fill = 0]
-                  00003adc    000000ac              : HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj (.text)
-                  00003b88    000000a0              : random.obj (.text)
-                  00003c28    0000009c              : line.obj (.text:Graphics_drawLineH)
-                  00003cc4    0000009c              : line.obj (.text:Graphics_drawLineV)
-                  00003d60    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
-                  00003dfc    00000098     game.lib : init_game.obj (.text)
-                  00003e94    00000096     rtsv7M4_T_le_v4SPD16_eabi.lib : ull_div_t2.asm.obj (.text)
-                  00003f2a    00000002     --HOLE-- [fill = 0]
-                  00003f2c    00000092     game.lib : scores.obj (.text)
-                  00003fbe    00000002     --HOLE-- [fill = 0]
-                  00003fc0    00000088              : gpio.o (.text:GPIO_setAsPeripheralModuleFunctionOutputPin)
-                  00004048    00000086     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
-                  000040ce    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
-                  00004154    0000007a                                   : memset_t2.asm.obj (.text)
-                  000041ce    0000006e                                   : _printfi.c.obj (.text:_mcpy)
-                  0000423c    0000006e                                   : fd_tos_t2.asm.obj (.text)
-                  000042aa    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00004312    00000064     game.lib : line.obj (.text:Graphics_getClipCode)
-                  00004376    00000002     --HOLE-- [fill = 0]
-                  00004378    00000064     rtsv7M4_T_le_v4SPD16_eabi.lib : s_frexp.c.obj (.text:frexp)
-                  000043dc    0000005a     game.lib : context.obj (.text:Graphics_drawPixel)
-                  00004436    00000056     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_f)
-                  0000448c    00000054                                   : _ltoa.c.obj (.text:__TI_ltoa)
-                  000044e0    00000052     game.lib : context.obj (.text:Graphics_initContext)
-                  00004532    00000052     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ecpy)
-                  00004584    0000004c                                   : atoi.c.obj (.text:atoi)
-                  000045d0    00000048     game.lib : string.obj (.text:Graphics_drawStringCentered)
-                  00004618    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
-                  00004660    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  000046a4    00000040     game.lib : gpio.o (.text:GPIO_setAsOutputPin)
-                  000046e4    00000040              : string.obj (.text:Graphics_getNumberOfLeadingZeros)
-                  00004724    00000040              : spi.o (.text:is_A_Module)
-                  00004764    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : sprintf.c.obj (.text:sprintf)
-                  000047a4    0000003e                                   : _printfi.c.obj (.text:_fcpy)
-                  000047e2    00000038                                   : fs_tod_t2.asm.obj (.text)
-                  0000481a    00000036     game.lib : display.obj (.text:Graphics_drawHorizontalLineOnDisplay)
-                  00004850    00000036              : display.obj (.text:Graphics_drawVerticalLineOnDisplay)
-                  00004886    00000002     --HOLE-- [fill = 0]
-                  00004888    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  000048bc    0000002e                                   : i_tofd_t2.asm.obj (.text)
-                  000048ea    0000002c     game.lib : display.obj (.text:Graphics_drawPixelOnDisplay)
-                  00004916    00000002     --HOLE-- [fill = 0]
-                  00004918    00000028              : gpio.o (.text:GPIO_setOutputHighOnPin)
-                  00004940    00000028              : gpio.o (.text:GPIO_setOutputLowOnPin)
-                  00004968    0000001e              : display.obj (.text:Graphics_fillRectangleOnDisplay)
-                  00004986    0000001c              : spi.o (.text:SPI_enableModule)
-                  000049a2    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  000049be    0000001c                                   : memccpy.c.obj (.text:memccpy)
-                  000049da    0000001a     game.lib : display.obj (.text:Graphics_clearDisplayOnDisplay)
-                  000049f4    0000001a              : context.obj (.text:Graphics_setBackgroundColor)
-                  00004a0e    0000001a              : context.obj (.text:Graphics_setFont)
-                  00004a28    0000001a     rtsv7M4_T_le_v4SPD16_eabi.lib : s_copysign.c.obj (.text:copysign)
-                  00004a42    00000018                                   : sprintf.c.obj (.text:_outs)
-                  00004a5a    00000016     game.lib : spi.o (.text:EUSCI_A_SPI_enable)
-                  00004a70    00000016              : spi.o (.text:EUSCI_B_SPI_enable)
-                  00004a86    00000016              : context.obj (.text:Graphics_setForegroundColor)
-                  00004a9c    00000016              : display.obj (.text:Graphics_translateColorOnDisplay)
-                  00004ab2    00000016     rtsv7M4_T_le_v4SPD16_eabi.lib : strchr.c.obj (.text:strchr)
-                  00004ac8    00000014                                   : strlen.c.obj (.text:strlen)
-                  00004adc    00000012     game.lib : context.obj (.text:Graphics_clearDisplay)
-                  00004aee    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : wcslen.c.obj (.text:wcslen)
-                  00004b00    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  00004b0e    0000000e     startup_msp432p401r_ccs.obj (.text)
-                  00004b1c    0000000a     rtsv7M4_T_le_v4SPD16_eabi.lib : sprintf.c.obj (.text:_outc)
-                  00004b26    00000002     --HOLE-- [fill = 0]
-                  00004b28    00000008                                   : errno.c.obj (.text:__aeabi_errno_addr)
-                  00004b30    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
-                  00004b34    00000004                                   : exit.c.obj (.text:abort:abort)
+.text      0    000000e4    000009d4     
+                  000000e4    00000354     system_msp432p401r.obj (.text)
+                  00000438    000002b8     buttons.obj (.text)
+                  000006f0    00000138     led.obj (.text)
+                  00000828    000000f0     main.obj (.text)
+                  00000918    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  000009b4    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00000a1c    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00000a60    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00000a94    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00000aa2    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  00000ab0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000ab4    00000004                                   : exit.c.obj (.text:abort:abort)
 
-.const     0    00004b38    0000100c     
-                  00004b38    00000a17     game.lib : fontcmsc22.obj (.const:.string:g_pucCmsc22Data)
-                  0000554f    000002f8              : fontfixed6x8.obj (.const:.string:g_pucFontFixed6x8Data)
-                  00005847    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
-                  00005948    000000c8     game.lib : fontcmsc22.obj (.const:g_sFontCmsc22)
-                  00005a10    000000c8              : fontfixed6x8.obj (.const:g_sFontFixed6x8)
-                  00005ad8    00000030              : gpio.o (.const:GPIO_PORT_TO_BASE)
-                  00005b08    00000020              : Crystalfontz128x128_ST7735.obj (.const:g_sCrystalfontz128x128_funcs)
-                  00005b28    0000001c              : HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj (.const:$P$T0$1)
-
-.cinit     0    00005b48    00000070     
-                  00005b48    00000045     (.cinit..data.load) [load image, compression = lzss]
-                  00005b8d    00000003     --HOLE-- [fill = 0]
-                  00005b90    0000000c     (__TI_handler_table)
-                  00005b9c    00000004     --HOLE-- [fill = 0]
-                  00005ba0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
-                  00005ba8    00000010     (__TI_cinit_table)
+.cinit     0    00000ab8    0000001c     
+                  00000ab8    0000000a     (.cinit..data.load) [load image, compression = lzss]
+                  00000ac2    00000002     --HOLE-- [fill = 0]
+                  00000ac4    00000008     (__TI_handler_table)
+                  00000acc    00000008     (__TI_cinit_table)
 
 .init_array 
 *          0    00000000    00000000     UNINITIALIZED
 
 .binit     0    00000000    00000000     
 
-.data      0    20000000    000000b8     UNINITIALIZED
-                  20000000    00000078     game.lib : menu.obj (.data:options)
-                  20000078    00000010              : Crystalfontz128x128_ST7735.obj (.data:g_sCrystalfontz128x128)
-                  20000088    0000000c              : menu.obj (.data:color)
-                  20000094    0000000c              : road.obj (.data)
-                  200000a0    00000008              : car.obj (.data)
-                  200000a8    00000004     buttons.obj (.data)
-                  200000ac    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
-                  200000b0    00000004     system_msp432p401r.obj (.data)
-                  200000b4    00000002     game.lib : random.obj (.data)
-                  200000b6    00000001              : init_game.obj (.data)
-                  200000b7    00000001              : menu.obj (.data)
-
-.bss       0    200000b8    00000062     UNINITIALIZED
-                  200000b8    00000020     game.lib : road.obj (.bss:road)
-                  200000d8    0000001c              : lcd.obj (.bss:g_sContext)
-                  200000f4    0000001c              : lcd.obj (.bss:g_sContext_big_font)
-                  20000110    00000002     (.common:Lcd_ScreenHeigth)
-                  20000112    00000002     (.common:Lcd_ScreenWidth)
-                  20000114    00000002     (.common:Lcd_TouchTrim)
-                  20000116    00000001     (.common:Lcd_FlagRead)
-                  20000117    00000001     (.common:Lcd_FontSolid)
-                  20000118    00000001     (.common:Lcd_Orientation)
-                  20000119    00000001     (.common:Lcd_PenSolid)
+.data      0    20000000    00000008     UNINITIALIZED
+                  20000000    00000004     buttons.obj (.data)
+                  20000004    00000004     system_msp432p401r.obj (.data)
 
 .stack     0    2000fe00    00000200     UNINITIALIZED
                   2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
@@ -205,564 +77,284 @@ __llvm_prf_cnts
 
 MODULE SUMMARY
 
-       Module                                               code    ro data   rw data
-       ------                                               ----    -------   -------
+       Module                        code   ro data   rw data
+       ------                        ----   -------   -------
     ./
-       system_msp432p401r.obj                               852     0         8      
-       startup_msp432p401r_ccs.obj                          14      228       0      
-       main.obj                                             240     0         0      
-    +--+----------------------------------------------------+-------+---------+---------+
-       Total:                                               1106    228       8      
-                                                                                     
+       system_msp432p401r.obj        852    0         8      
+       startup_msp432p401r_ccs.obj   14     228       0      
+       main.obj                      240    0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        1106   228       8      
+                                                             
     ./LED/
-       led.obj                                              312     0         0      
-    +--+----------------------------------------------------+-------+---------+---------+
-       Total:                                               312     0         0      
-                                                                                     
+       led.obj                       312    0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        312    0         0      
+                                                             
     ./buttons/
-       buttons.obj                                          696     0         8      
-    +--+----------------------------------------------------+-------+---------+---------+
-       Total:                                               696     0         8      
-                                                                                     
-    ../game.lib
-       fontcmsc22.obj                                       0       2783      0      
-       string.obj                                           1536    0         0      
-       circle.obj                                           1176    0         0      
-       line.obj                                             1168    0         0      
-       Crystalfontz128x128_ST7735.obj                       1012    32        52     
-       fontfixed6x8.obj                                     0       960       0      
-       road.obj                                             584     0         88     
-       lcd.obj                                              492     0         112    
-       menu.obj                                             332     0         266    
-       gpio.o                                               280     48        0      
-       car.obj                                              296     0         16     
-       spi.o                                                312     0         0      
-       rectangle.obj                                        274     0         0      
-       context.obj                                          264     0         0      
-       display.obj                                          230     0         0      
-       HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj   172     28        0      
-       random.obj                                           160     0         4      
-       init_game.obj                                        152     0         2      
-       scores.obj                                           146     0         0      
-    +--+----------------------------------------------------+-------+---------+---------+
-       Total:                                               8586    3851      540    
-                                                                                     
+       buttons.obj                   696    0         8      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        696    0         8      
+                                                             
     /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
-       _printfi.c.obj                                       4851    0         0      
-       fd_add_t2.asm.obj                                    438     0         0      
-       fd_div_t2.asm.obj                                    310     0         0      
-       s_scalbn.c.obj                                       272     0         0      
-       fd_cmp_t2.asm.obj                                    268     0         0      
-       ctype.c.obj                                          0       257       0      
-       fd_mul_t2.asm.obj                                    252     0         0      
-       s_floor.c.obj                                        248     0         0      
-       s_round.c.obj                                        196     0         0      
-       memcpy_t2.asm.obj                                    156     0         0      
-       ull_div_t2.asm.obj                                   150     0         0      
-       memset_t2.asm.obj                                    122     0         0      
-       fd_tos_t2.asm.obj                                    110     0         0      
-       copy_decompress_lzss.c.obj                           104     0         0      
-       s_frexp.c.obj                                        100     0         0      
-       sprintf.c.obj                                        98      0         0      
-       _ltoa.c.obj                                          84      0         0      
-       atoi.c.obj                                           76      0         0      
-       fd_toi_t2.asm.obj                                    72      0         0      
-       autoinit.c.obj                                       68      0         0      
-       fs_tod_t2.asm.obj                                    56      0         0      
-       boot_cortex_m.c.obj                                  52      0         0      
-       i_tofd_t2.asm.obj                                    46      0         0      
-       copy_zero_init.c.obj                                 28      0         0      
-       memccpy.c.obj                                        28      0         0      
-       s_copysign.c.obj                                     26      0         0      
-       strchr.c.obj                                         22      0         0      
-       strlen.c.obj                                         20      0         0      
-       wcslen.c.obj                                         18      0         0      
-       errno.c.obj                                          8       0         8      
-       copy_decompress_none.c.obj                           14      0         0      
-       exit.c.obj                                           4       0         0      
-       pre_init.c.obj                                       4       0         0      
-       div0.asm.obj                                         2       0         0      
-    +--+----------------------------------------------------+-------+---------+---------+
-       Total:                                               8303    257       8      
-                                                                                     
-       Stack:                                               0       0         1024   
-       Linker Generated:                                    0       105       0      
-    +--+----------------------------------------------------+-------+---------+---------+
-       Grand Total:                                         19003   4441      1588   
+       memcpy_t2.asm.obj             156    0         0      
+       copy_decompress_lzss.c.obj    104    0         0      
+       autoinit.c.obj                68     0         0      
+       boot_cortex_m.c.obj           52     0         0      
+       copy_decompress_none.c.obj    14     0         0      
+       exit.c.obj                    4      0         0      
+       pre_init.c.obj                4      0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        402    0         0      
+                                                             
+       Stack:                        0      0         1024   
+       Linker Generated:             0      26        0      
+    +--+-----------------------------+------+---------+---------+
+       Grand Total:                  2516   254       1040   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00005ba8 records: 2, size/record: 8, table size: 16
-	.data: load addr=00005b48, load size=00000045 bytes, run addr=20000000, run size=000000b8 bytes, compression=lzss
-	.bss: load addr=00005ba0, load size=00000008 bytes, run addr=200000b8, run size=00000062 bytes, compression=zero_init
+__TI_cinit_table @ 00000acc records: 1, size/record: 8, table size: 8
+	.data: load addr=00000ab8, load size=0000000a bytes, run addr=20000000, run size=00000008 bytes, compression=lzss
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00005b90 records: 3, size/record: 4, table size: 12
+__TI_handler_table @ 00000ac4 records: 2, size/record: 4, table size: 8
 	index: 0, handler: __TI_decompress_lzss
 	index: 1, handler: __TI_decompress_none
-	index: 2, handler: __TI_zero_init
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
 
-address   name                                       
--------   ----                                       
-00004b1b  ADC14_IRQHandler                           
-00004b1b  AES256_IRQHandler                          
-00004b1b  BusFault_Handler                           
-00004b35  C$$EXIT                                    
-00004b1b  COMP_E0_IRQHandler                         
-00004b1b  COMP_E1_IRQHandler                         
-00004b1b  CS_IRQHandler                              
-00003163  Check_Crash                                
-00002bd5  Create_Menu                                
-0000125d  Crystalfontz128x128_Init                   
-00000fe1  Crystalfontz128x128_SetDrawFrame           
-00000fb1  Crystalfontz128x128_SetOrientation         
-00004b1b  DMA_ERR_IRQHandler                         
-00004b1b  DMA_INT0_IRQHandler                        
-00004b1b  DMA_INT1_IRQHandler                        
-00004b1b  DMA_INT2_IRQHandler                        
-00004b1b  DMA_INT3_IRQHandler                        
-00004b1b  DebugMon_Handler                           
-00004b1b  Default_Handler                            
-00003093  Draw_Car                                   
-0000205b  Draw_Road                                  
-00004b1b  EUSCIA0_IRQHandler                         
-00004b1b  EUSCIA1_IRQHandler                         
-00004b1b  EUSCIA2_IRQHandler                         
-00004b1b  EUSCIA3_IRQHandler                         
-00004b1b  EUSCIB0_IRQHandler                         
-00004b1b  EUSCIB1_IRQHandler                         
-00004b1b  EUSCIB2_IRQHandler                         
-00004b1b  EUSCIB3_IRQHandler                         
-00004a5b  EUSCI_A_SPI_enable                         
-00004a71  EUSCI_B_SPI_enable                         
-00004b1b  FLCTL_IRQHandler                           
-00004b1b  FPU_IRQHandler                             
-000046a5  GPIO_setAsOutputPin                        
-00003fc1  GPIO_setAsPeripheralModuleFunctionOutputPin
-00004919  GPIO_setOutputHighOnPin                    
-00004941  GPIO_setOutputLowOnPin                     
-00003f85  Game_Over                                  
-00004add  Graphics_clearDisplay                      
-000049db  Graphics_clearDisplayOnDisplay             
-00001c21  Graphics_drawCircle                        
-0000481b  Graphics_drawHorizontalLineOnDisplay       
-000029f7  Graphics_drawLine                          
-00003c29  Graphics_drawLineH                         
-00003cc5  Graphics_drawLineV                         
-000043dd  Graphics_drawPixel                         
-000048eb  Graphics_drawPixelOnDisplay                
-00000b33  Graphics_drawString                        
-000045d1  Graphics_drawStringCentered                
-00004851  Graphics_drawVerticalLineOnDisplay         
-000020d9  Graphics_fillCircle                        
-000032b1  Graphics_fillRectangle                     
-00004969  Graphics_fillRectangleOnDisplay            
-000035d1  Graphics_getStringWidth                    
-000044e1  Graphics_initContext                       
-000049f5  Graphics_setBackgroundColor                
-00004a0f  Graphics_setFont                           
-00004a87  Graphics_setForegroundColor                
-00004a9d  Graphics_translateColorOnDisplay           
-00003b4d  HAL_LCD_PortInit                           
-00003b15  HAL_LCD_SpiInit                            
-00003aef  HAL_LCD_writeCommand                       
-00003add  HAL_LCD_writeData                          
-00004b1b  HardFault_Handler                          
-00003153  Init_Car                                   
-00003e67  Init_Game                                  
-0000246b  Init_Lcd                                   
-00003c01  Init_Random                                
-00001eb3  Init_Road                                  
-20000116  Lcd_FlagRead                               
-20000117  Lcd_FontSolid                              
-20000118  Lcd_Orientation                            
-20000119  Lcd_PenSolid                               
-20000110  Lcd_ScreenHeigth                           
-20000112  Lcd_ScreenWidth                            
-20000114  Lcd_TouchTrim                              
-00004b1b  MemManage_Handler                          
-00004b1b  NMI_Handler                                
-00004b1b  PCM_IRQHandler                             
-00004b1b  PORT1_IRQHandler                           
-00004b1b  PORT2_IRQHandler                           
-000018f1  PORT3_IRQHandler                           
-000018f1  PORT3_IRQHandler                           
-00001915  PORT4_IRQHandler                           
-00001915  PORT4_IRQHandler                           
-0000192b  PORT5_IRQHandler                           
-0000192b  PORT5_IRQHandler                           
-00004b1b  PORT6_IRQHandler                           
-00004b1b  PSS_IRQHandler                             
-00004b1b  PendSV_Handler                             
-00004b1b  RTC_C_IRQHandler                           
-00004b0f  Reset_Handler                              
-00004987  SPI_enableModule                           
-00003a2b  SPI_initMaster                             
-00004b1b  SVC_Handler                                
-00003073  Set_Car_Color                              
-00002b6d  Show_Menu                                  
-00003f83  Show_Msg                                   
-00003f2d  Show_Scores                                
-00003e39  Start_SysTick                              
-00003065  Steering_Wheel                             
-00003e31  SysTick_Handler                            
-00003e31  SysTick_Handler                            
-200000b0  SystemCoreClock                            
-000013a5  SystemCoreClockUpdate                      
-0000161d  SystemInit                                 
-00004b1b  T32_INT1_IRQHandler                        
-00004b1b  T32_INT2_IRQHandler                        
-00004b1b  T32_INTC_IRQHandler                        
-00004b1b  TA0_0_IRQHandler                           
-00004b1b  TA0_N_IRQHandler                           
-00004b1b  TA1_0_IRQHandler                           
-00004b1b  TA1_N_IRQHandler                           
-00004b1b  TA2_0_IRQHandler                           
-00004b1b  TA2_N_IRQHandler                           
-00004b1b  TA3_0_IRQHandler                           
-00004b1b  TA3_N_IRQHandler                           
-00004b1b  UsageFault_Handler                         
-4000480c  WDTCTL_SYM                                 
-00004b1b  WDT_A_IRQHandler                           
-20010000  __STACK_END                                
-00000200  __STACK_SIZE                               
-00005ba8  __TI_CINIT_Base                            
-00005bb8  __TI_CINIT_Limit                           
-00005b90  __TI_Handler_Table_Base                    
-00005b9c  __TI_Handler_Table_Limit                   
-00004661  __TI_auto_init_nobinit_nopinit             
-000042ab  __TI_decompress_lzss                       
-00004b01  __TI_decompress_none                       
-0000448d  __TI_ltoa                                  
-ffffffff  __TI_pprof_out_hndl                        
-000000e5  __TI_printfi                               
-ffffffff  __TI_prof_data_size                        
-ffffffff  __TI_prof_data_start                       
-00000000  __TI_static_base__                         
-000049a3  __TI_zero_init_nomemset                    
-00004049  __aeabi_cdcmpeq                            
-00004049  __aeabi_cdcmple                            
-000040cf  __aeabi_cdrcmple                           
-0000423d  __aeabi_d2f                                
-00004619  __aeabi_d2iz                               
-000026cb  __aeabi_dadd                               
-00002f2d  __aeabi_ddiv                               
-000034d5  __aeabi_dmul                               
-000026c1  __aeabi_dsub                               
-00004b29  __aeabi_errno_addr                         
-000047e3  __aeabi_f2d                                
-000048bd  __aeabi_i2d                                
-00001e8f  __aeabi_idiv0                              
-00001e8f  __aeabi_ldiv0                              
-00004155  __aeabi_memclr                             
-00004155  __aeabi_memclr4                            
-00004155  __aeabi_memclr8                            
-00003d61  __aeabi_memcpy                             
-00003d61  __aeabi_memcpy4                            
-00003d61  __aeabi_memcpy8                            
-00004157  __aeabi_memset                             
-00004157  __aeabi_memset4                            
-00004157  __aeabi_memset8                            
-00003e95  __aeabi_uldivmod                           
-ffffffff  __binit__                                  
-ffffffff  __c_args__                                 
-UNDEFED   __mpu_init                                 
-2000fe00  __stack                                    
-20000000  __start___llvm_prf_cnts                    
-20000000  __stop___llvm_prf_cnts                     
-00004889  _c_int00_noargs                            
-00005847  _ctypes_                                   
-UNDEFED   _system_post_cinit                         
-00004b31  _system_pre_init                           
-00004b35  abort                                      
-00004585  atoi                                       
-ffffffff  binit                                      
-00001839  button_bottom_fsm                          
-00001e91  change_speed                               
-00003e1d  check_SysTick_flag                         
-00001879  check_and_clear_bb_flag                    
-000018a1  check_and_clear_bj_flag                    
-000018c9  check_and_clear_bu_flag                    
-00002455  clear_display                              
-00004a29  copysign                                   
-00004a29  copysignl                                  
-0000242b  drawLine                                   
-0000240b  draw_circle                                
-000023b3  draw_string_back                           
-0000237f  draw_string_big_font                       
-0000234b  draw_string_font                           
-200000ac  errno                                      
-0000232b  fill_circle                                
-00002305  fill_rectangle                             
-200000b6  flag_SysTick                               
-000036cd  floor                                      
-000036cd  floorl                                     
-00003e19  foo                                        
-00004379  frexp                                      
-00004379  frexpl                                     
-20000078  g_sCrystalfontz128x128                     
-00005b08  g_sCrystalfontz128x128_funcs               
-00005948  g_sFontCmsc22                              
-00005a10  g_sFontFixed6x8                            
-00001725  init_buttons                               
-00001781  init_buttons_int                           
-00002df5  init_rgb                                   
-00000000  interruptVectors                           
-000033c5  ldexp                                      
-000033c5  ldexpl                                     
-00002eeb  led_off                                    
-00002e6f  led_on                                     
-000037c5  main                                       
-000049bf  memccpy                                    
-00003d61  memcpy                                     
-0000415d  memset                                     
-00003b89  rand                                       
-000017f5  read_button_bottom                         
-00001817  read_upper_bottom                          
-000038b5  round                                      
-000038b5  roundl                                     
-000033c5  scalbn                                     
-000033c5  scalbnl                                    
-00003dfd  show_error                                 
-00004765  sprintf                                    
-00004ab3  strchr                                     
-00004ac9  strlen                                     
-00004aef  wcslen                                     
+address   name                          
+-------   ----                          
+00000aaf  ADC14_IRQHandler              
+00000aaf  AES256_IRQHandler             
+00000aaf  BusFault_Handler              
+00000ab5  C$$EXIT                       
+00000aaf  COMP_E0_IRQHandler            
+00000aaf  COMP_E1_IRQHandler            
+00000aaf  CS_IRQHandler                 
+UNDEFED   Create_Menu                   
+00000aaf  DMA_ERR_IRQHandler            
+00000aaf  DMA_INT0_IRQHandler           
+00000aaf  DMA_INT1_IRQHandler           
+00000aaf  DMA_INT2_IRQHandler           
+00000aaf  DMA_INT3_IRQHandler           
+00000aaf  DebugMon_Handler              
+00000aaf  Default_Handler               
+UNDEFED   Draw_Car                      
+UNDEFED   Draw_Road                     
+00000aaf  EUSCIA0_IRQHandler            
+00000aaf  EUSCIA1_IRQHandler            
+00000aaf  EUSCIA2_IRQHandler            
+00000aaf  EUSCIA3_IRQHandler            
+00000aaf  EUSCIB0_IRQHandler            
+00000aaf  EUSCIB1_IRQHandler            
+00000aaf  EUSCIB2_IRQHandler            
+00000aaf  EUSCIB3_IRQHandler            
+00000aaf  FLCTL_IRQHandler              
+00000aaf  FPU_IRQHandler                
+00000aaf  HardFault_Handler             
+UNDEFED   Init_Game                     
+00000aaf  MemManage_Handler             
+00000aaf  NMI_Handler                   
+00000aaf  PCM_IRQHandler                
+00000aaf  PORT1_IRQHandler              
+00000aaf  PORT2_IRQHandler              
+00000631  PORT3_IRQHandler              
+00000631  PORT3_IRQHandler              
+00000655  PORT4_IRQHandler              
+00000655  PORT4_IRQHandler              
+0000066b  PORT5_IRQHandler              
+0000066b  PORT5_IRQHandler              
+00000aaf  PORT6_IRQHandler              
+00000aaf  PSS_IRQHandler                
+00000aaf  PendSV_Handler                
+00000aaf  RTC_C_IRQHandler              
+00000aa3  Reset_Handler                 
+00000aaf  SVC_Handler                   
+UNDEFED   Set_Car_Color                 
+UNDEFED   Show_Menu                     
+00000aaf  SysTick_Handler               
+20000004  SystemCoreClock               
+000000e5  SystemCoreClockUpdate         
+0000035d  SystemInit                    
+00000aaf  T32_INT1_IRQHandler           
+00000aaf  T32_INT2_IRQHandler           
+00000aaf  T32_INTC_IRQHandler           
+00000aaf  TA0_0_IRQHandler              
+00000aaf  TA0_N_IRQHandler              
+00000aaf  TA1_0_IRQHandler              
+00000aaf  TA1_N_IRQHandler              
+00000aaf  TA2_0_IRQHandler              
+00000aaf  TA2_N_IRQHandler              
+00000aaf  TA3_0_IRQHandler              
+00000aaf  TA3_N_IRQHandler              
+00000aaf  UsageFault_Handler            
+4000480c  WDTCTL_SYM                    
+00000aaf  WDT_A_IRQHandler              
+20010000  __STACK_END                   
+00000200  __STACK_SIZE                  
+00000acc  __TI_CINIT_Base               
+00000ad4  __TI_CINIT_Limit              
+00000ac4  __TI_Handler_Table_Base       
+00000acc  __TI_Handler_Table_Limit      
+00000a1d  __TI_auto_init_nobinit_nopinit
+000009b5  __TI_decompress_lzss          
+00000a95  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00000919  __aeabi_memcpy                
+00000919  __aeabi_memcpy4               
+00000919  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+2000fe00  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+00000a61  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+00000ab1  _system_pre_init              
+00000ab5  abort                         
+ffffffff  binit                         
+00000579  button_bottom_fsm             
+UNDEFED   change_speed                  
+UNDEFED   check_SysTick_flag            
+000005b9  check_and_clear_bb_flag       
+000005e1  check_and_clear_bj_flag       
+00000609  check_and_clear_bu_flag       
+00000465  init_buttons                  
+000004c1  init_buttons_int              
+000006f1  init_rgb                      
+00000000  interruptVectors              
+000007e7  led_off                       
+0000076b  led_on                        
+00000829  main                          
+00000919  memcpy                        
+00000535  read_button_bottom            
+00000557  read_upper_bottom             
+UNDEFED   show_error                    
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
 
-address   name                                       
--------   ----                                       
-00000000  __TI_static_base__                         
-00000000  interruptVectors                           
-000000e5  __TI_printfi                               
-00000200  __STACK_SIZE                               
-00000b33  Graphics_drawString                        
-00000fb1  Crystalfontz128x128_SetOrientation         
-00000fe1  Crystalfontz128x128_SetDrawFrame           
-0000125d  Crystalfontz128x128_Init                   
-000013a5  SystemCoreClockUpdate                      
-0000161d  SystemInit                                 
-00001725  init_buttons                               
-00001781  init_buttons_int                           
-000017f5  read_button_bottom                         
-00001817  read_upper_bottom                          
-00001839  button_bottom_fsm                          
-00001879  check_and_clear_bb_flag                    
-000018a1  check_and_clear_bj_flag                    
-000018c9  check_and_clear_bu_flag                    
-000018f1  PORT3_IRQHandler                           
-000018f1  PORT3_IRQHandler                           
-00001915  PORT4_IRQHandler                           
-00001915  PORT4_IRQHandler                           
-0000192b  PORT5_IRQHandler                           
-0000192b  PORT5_IRQHandler                           
-00001c21  Graphics_drawCircle                        
-00001e8f  __aeabi_idiv0                              
-00001e8f  __aeabi_ldiv0                              
-00001e91  change_speed                               
-00001eb3  Init_Road                                  
-0000205b  Draw_Road                                  
-000020d9  Graphics_fillCircle                        
-00002305  fill_rectangle                             
-0000232b  fill_circle                                
-0000234b  draw_string_font                           
-0000237f  draw_string_big_font                       
-000023b3  draw_string_back                           
-0000240b  draw_circle                                
-0000242b  drawLine                                   
-00002455  clear_display                              
-0000246b  Init_Lcd                                   
-000026c1  __aeabi_dsub                               
-000026cb  __aeabi_dadd                               
-000029f7  Graphics_drawLine                          
-00002b6d  Show_Menu                                  
-00002bd5  Create_Menu                                
-00002df5  init_rgb                                   
-00002e6f  led_on                                     
-00002eeb  led_off                                    
-00002f2d  __aeabi_ddiv                               
-00003065  Steering_Wheel                             
-00003073  Set_Car_Color                              
-00003093  Draw_Car                                   
-00003153  Init_Car                                   
-00003163  Check_Crash                                
-000032b1  Graphics_fillRectangle                     
-000033c5  ldexp                                      
-000033c5  ldexpl                                     
-000033c5  scalbn                                     
-000033c5  scalbnl                                    
-000034d5  __aeabi_dmul                               
-000035d1  Graphics_getStringWidth                    
-000036cd  floor                                      
-000036cd  floorl                                     
-000037c5  main                                       
-000038b5  round                                      
-000038b5  roundl                                     
-00003a2b  SPI_initMaster                             
-00003add  HAL_LCD_writeData                          
-00003aef  HAL_LCD_writeCommand                       
-00003b15  HAL_LCD_SpiInit                            
-00003b4d  HAL_LCD_PortInit                           
-00003b89  rand                                       
-00003c01  Init_Random                                
-00003c29  Graphics_drawLineH                         
-00003cc5  Graphics_drawLineV                         
-00003d61  __aeabi_memcpy                             
-00003d61  __aeabi_memcpy4                            
-00003d61  __aeabi_memcpy8                            
-00003d61  memcpy                                     
-00003dfd  show_error                                 
-00003e19  foo                                        
-00003e1d  check_SysTick_flag                         
-00003e31  SysTick_Handler                            
-00003e31  SysTick_Handler                            
-00003e39  Start_SysTick                              
-00003e67  Init_Game                                  
-00003e95  __aeabi_uldivmod                           
-00003f2d  Show_Scores                                
-00003f83  Show_Msg                                   
-00003f85  Game_Over                                  
-00003fc1  GPIO_setAsPeripheralModuleFunctionOutputPin
-00004049  __aeabi_cdcmpeq                            
-00004049  __aeabi_cdcmple                            
-000040cf  __aeabi_cdrcmple                           
-00004155  __aeabi_memclr                             
-00004155  __aeabi_memclr4                            
-00004155  __aeabi_memclr8                            
-00004157  __aeabi_memset                             
-00004157  __aeabi_memset4                            
-00004157  __aeabi_memset8                            
-0000415d  memset                                     
-0000423d  __aeabi_d2f                                
-000042ab  __TI_decompress_lzss                       
-00004379  frexp                                      
-00004379  frexpl                                     
-000043dd  Graphics_drawPixel                         
-0000448d  __TI_ltoa                                  
-000044e1  Graphics_initContext                       
-00004585  atoi                                       
-000045d1  Graphics_drawStringCentered                
-00004619  __aeabi_d2iz                               
-00004661  __TI_auto_init_nobinit_nopinit             
-000046a5  GPIO_setAsOutputPin                        
-00004765  sprintf                                    
-000047e3  __aeabi_f2d                                
-0000481b  Graphics_drawHorizontalLineOnDisplay       
-00004851  Graphics_drawVerticalLineOnDisplay         
-00004889  _c_int00_noargs                            
-000048bd  __aeabi_i2d                                
-000048eb  Graphics_drawPixelOnDisplay                
-00004919  GPIO_setOutputHighOnPin                    
-00004941  GPIO_setOutputLowOnPin                     
-00004969  Graphics_fillRectangleOnDisplay            
-00004987  SPI_enableModule                           
-000049a3  __TI_zero_init_nomemset                    
-000049bf  memccpy                                    
-000049db  Graphics_clearDisplayOnDisplay             
-000049f5  Graphics_setBackgroundColor                
-00004a0f  Graphics_setFont                           
-00004a29  copysign                                   
-00004a29  copysignl                                  
-00004a5b  EUSCI_A_SPI_enable                         
-00004a71  EUSCI_B_SPI_enable                         
-00004a87  Graphics_setForegroundColor                
-00004a9d  Graphics_translateColorOnDisplay           
-00004ab3  strchr                                     
-00004ac9  strlen                                     
-00004add  Graphics_clearDisplay                      
-00004aef  wcslen                                     
-00004b01  __TI_decompress_none                       
-00004b0f  Reset_Handler                              
-00004b1b  ADC14_IRQHandler                           
-00004b1b  AES256_IRQHandler                          
-00004b1b  BusFault_Handler                           
-00004b1b  COMP_E0_IRQHandler                         
-00004b1b  COMP_E1_IRQHandler                         
-00004b1b  CS_IRQHandler                              
-00004b1b  DMA_ERR_IRQHandler                         
-00004b1b  DMA_INT0_IRQHandler                        
-00004b1b  DMA_INT1_IRQHandler                        
-00004b1b  DMA_INT2_IRQHandler                        
-00004b1b  DMA_INT3_IRQHandler                        
-00004b1b  DebugMon_Handler                           
-00004b1b  Default_Handler                            
-00004b1b  EUSCIA0_IRQHandler                         
-00004b1b  EUSCIA1_IRQHandler                         
-00004b1b  EUSCIA2_IRQHandler                         
-00004b1b  EUSCIA3_IRQHandler                         
-00004b1b  EUSCIB0_IRQHandler                         
-00004b1b  EUSCIB1_IRQHandler                         
-00004b1b  EUSCIB2_IRQHandler                         
-00004b1b  EUSCIB3_IRQHandler                         
-00004b1b  FLCTL_IRQHandler                           
-00004b1b  FPU_IRQHandler                             
-00004b1b  HardFault_Handler                          
-00004b1b  MemManage_Handler                          
-00004b1b  NMI_Handler                                
-00004b1b  PCM_IRQHandler                             
-00004b1b  PORT1_IRQHandler                           
-00004b1b  PORT2_IRQHandler                           
-00004b1b  PORT6_IRQHandler                           
-00004b1b  PSS_IRQHandler                             
-00004b1b  PendSV_Handler                             
-00004b1b  RTC_C_IRQHandler                           
-00004b1b  SVC_Handler                                
-00004b1b  T32_INT1_IRQHandler                        
-00004b1b  T32_INT2_IRQHandler                        
-00004b1b  T32_INTC_IRQHandler                        
-00004b1b  TA0_0_IRQHandler                           
-00004b1b  TA0_N_IRQHandler                           
-00004b1b  TA1_0_IRQHandler                           
-00004b1b  TA1_N_IRQHandler                           
-00004b1b  TA2_0_IRQHandler                           
-00004b1b  TA2_N_IRQHandler                           
-00004b1b  TA3_0_IRQHandler                           
-00004b1b  TA3_N_IRQHandler                           
-00004b1b  UsageFault_Handler                         
-00004b1b  WDT_A_IRQHandler                           
-00004b29  __aeabi_errno_addr                         
-00004b31  _system_pre_init                           
-00004b35  C$$EXIT                                    
-00004b35  abort                                      
-00005847  _ctypes_                                   
-00005948  g_sFontCmsc22                              
-00005a10  g_sFontFixed6x8                            
-00005b08  g_sCrystalfontz128x128_funcs               
-00005b90  __TI_Handler_Table_Base                    
-00005b9c  __TI_Handler_Table_Limit                   
-00005ba8  __TI_CINIT_Base                            
-00005bb8  __TI_CINIT_Limit                           
-20000000  __start___llvm_prf_cnts                    
-20000000  __stop___llvm_prf_cnts                     
-20000078  g_sCrystalfontz128x128                     
-200000ac  errno                                      
-200000b0  SystemCoreClock                            
-200000b6  flag_SysTick                               
-20000110  Lcd_ScreenHeigth                           
-20000112  Lcd_ScreenWidth                            
-20000114  Lcd_TouchTrim                              
-20000116  Lcd_FlagRead                               
-20000117  Lcd_FontSolid                              
-20000118  Lcd_Orientation                            
-20000119  Lcd_PenSolid                               
-2000fe00  __stack                                    
-20010000  __STACK_END                                
-4000480c  WDTCTL_SYM                                 
-ffffffff  __TI_pprof_out_hndl                        
-ffffffff  __TI_prof_data_size                        
-ffffffff  __TI_prof_data_start                       
-ffffffff  __binit__                                  
-ffffffff  __c_args__                                 
-ffffffff  binit                                      
-UNDEFED   __mpu_init                                 
-UNDEFED   _system_post_cinit                         
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  interruptVectors              
+000000e5  SystemCoreClockUpdate         
+00000200  __STACK_SIZE                  
+0000035d  SystemInit                    
+00000465  init_buttons                  
+000004c1  init_buttons_int              
+00000535  read_button_bottom            
+00000557  read_upper_bottom             
+00000579  button_bottom_fsm             
+000005b9  check_and_clear_bb_flag       
+000005e1  check_and_clear_bj_flag       
+00000609  check_and_clear_bu_flag       
+00000631  PORT3_IRQHandler              
+00000631  PORT3_IRQHandler              
+00000655  PORT4_IRQHandler              
+00000655  PORT4_IRQHandler              
+0000066b  PORT5_IRQHandler              
+0000066b  PORT5_IRQHandler              
+000006f1  init_rgb                      
+0000076b  led_on                        
+000007e7  led_off                       
+00000829  main                          
+00000919  __aeabi_memcpy                
+00000919  __aeabi_memcpy4               
+00000919  __aeabi_memcpy8               
+00000919  memcpy                        
+000009b5  __TI_decompress_lzss          
+00000a1d  __TI_auto_init_nobinit_nopinit
+00000a61  _c_int00_noargs               
+00000a95  __TI_decompress_none          
+00000aa3  Reset_Handler                 
+00000aaf  ADC14_IRQHandler              
+00000aaf  AES256_IRQHandler             
+00000aaf  BusFault_Handler              
+00000aaf  COMP_E0_IRQHandler            
+00000aaf  COMP_E1_IRQHandler            
+00000aaf  CS_IRQHandler                 
+00000aaf  DMA_ERR_IRQHandler            
+00000aaf  DMA_INT0_IRQHandler           
+00000aaf  DMA_INT1_IRQHandler           
+00000aaf  DMA_INT2_IRQHandler           
+00000aaf  DMA_INT3_IRQHandler           
+00000aaf  DebugMon_Handler              
+00000aaf  Default_Handler               
+00000aaf  EUSCIA0_IRQHandler            
+00000aaf  EUSCIA1_IRQHandler            
+00000aaf  EUSCIA2_IRQHandler            
+00000aaf  EUSCIA3_IRQHandler            
+00000aaf  EUSCIB0_IRQHandler            
+00000aaf  EUSCIB1_IRQHandler            
+00000aaf  EUSCIB2_IRQHandler            
+00000aaf  EUSCIB3_IRQHandler            
+00000aaf  FLCTL_IRQHandler              
+00000aaf  FPU_IRQHandler                
+00000aaf  HardFault_Handler             
+00000aaf  MemManage_Handler             
+00000aaf  NMI_Handler                   
+00000aaf  PCM_IRQHandler                
+00000aaf  PORT1_IRQHandler              
+00000aaf  PORT2_IRQHandler              
+00000aaf  PORT6_IRQHandler              
+00000aaf  PSS_IRQHandler                
+00000aaf  PendSV_Handler                
+00000aaf  RTC_C_IRQHandler              
+00000aaf  SVC_Handler                   
+00000aaf  SysTick_Handler               
+00000aaf  T32_INT1_IRQHandler           
+00000aaf  T32_INT2_IRQHandler           
+00000aaf  T32_INTC_IRQHandler           
+00000aaf  TA0_0_IRQHandler              
+00000aaf  TA0_N_IRQHandler              
+00000aaf  TA1_0_IRQHandler              
+00000aaf  TA1_N_IRQHandler              
+00000aaf  TA2_0_IRQHandler              
+00000aaf  TA2_N_IRQHandler              
+00000aaf  TA3_0_IRQHandler              
+00000aaf  TA3_N_IRQHandler              
+00000aaf  UsageFault_Handler            
+00000aaf  WDT_A_IRQHandler              
+00000ab1  _system_pre_init              
+00000ab5  C$$EXIT                       
+00000ab5  abort                         
+00000ac4  __TI_Handler_Table_Base       
+00000acc  __TI_CINIT_Base               
+00000acc  __TI_Handler_Table_Limit      
+00000ad4  __TI_CINIT_Limit              
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+20000004  SystemCoreClock               
+2000fe00  __stack                       
+20010000  __STACK_END                   
+4000480c  WDTCTL_SYM                    
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   Create_Menu                   
+UNDEFED   Draw_Car                      
+UNDEFED   Draw_Road                     
+UNDEFED   Init_Game                     
+UNDEFED   Set_Car_Color                 
+UNDEFED   Show_Menu                     
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+UNDEFED   change_speed                  
+UNDEFED   check_SysTick_flag            
+UNDEFED   show_error                    
 
-[224 symbols]
+[110 symbols]

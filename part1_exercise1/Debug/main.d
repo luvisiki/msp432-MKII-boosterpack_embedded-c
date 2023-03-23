@@ -21,9 +21,6 @@ main.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 main.obj: /Applications/ti/ccs1220/ccs/ccs_base/arm/include/system_msp432p401r.h
 main.obj: ../game.h
 main.obj: ../buttons/buttons.h
-main.obj: /Applications/ti/simplelink_msp432p4_sdk_3_40_01_02/source/ti/grlib/grlib.h
-main.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h
-main.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/assert.h
 
 ../main.c:
 
@@ -66,10 +63,4 @@ main.obj: /Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/incl
 ../game.h:
 
 ../buttons/buttons.h:
-
-/Applications/ti/simplelink_msp432p4_sdk_3_40_01_02/source/ti/grlib/grlib.h:
-
-/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdbool.h:
-
-/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/assert.h:
 

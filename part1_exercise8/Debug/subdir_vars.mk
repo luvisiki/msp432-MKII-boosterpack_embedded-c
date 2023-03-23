@@ -6,9 +6,6 @@
 CMD_SRCS += \
 ../msp432p401r.cmd 
 
-LIB_SRCS += \
-../game.lib 
-
 C_SRCS += \
 ../main.c \
 ../startup_msp432p401r_ccs.c \
