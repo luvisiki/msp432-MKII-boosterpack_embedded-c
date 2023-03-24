@@ -40,14 +40,16 @@ void config_temp(void)
                         ADC14_MCTLN_INCH_22);           //set input channel.  channel 22 is equal to pin5.2.
     ADC14->MEM[0]=0;
     //ADC14->IFGR0 |= ADC14_CLRIFGR0_CLRIFG0;
-    ADC14->IER0 |=  ADC14_IER0_IE0;                     //set E0 interrupt enable.
+    //ADC14->IER0 |=  ADC14_IER0_IE0;                     //set E0 interrupt enable.
     NVIC_EnableIRQ(ADC14_IRQn);
 }   
 
 void read_temp(void)
 {
-    ADC14->CTL0 |=  ADC14_CTL0_ENC;                     //enable the enc.
-    ADC14->CTL0 |=  ADC14_CTL0_SC;                      //start conversation
+    ADC14->CTL0 &=  ~ADC14_CTL0_ENC;                     //enc conifg.
+    ADC14->CTL0 |=  ADC14_CTL0_SC | ADC14_CTL0_ENC;      //start conversation
+    while(!ADC14->IFGR0 & ADC14_IFGR0_IFG0){}
+    return ADC->MEM[0];
 }
 
 float convert_to_volts(uint16_t reading)
@@ -66,8 +68,8 @@ float convert_to_Celsius(float volts)
 
 void all_values_temp(uint16_t* ADC_value, float* voltage, float* Celsius)
 {
-    read_temp();
-    *ADC_value = temp;
+
+    *ADC_value = read_temp();
     *voltage = convert_to_volts(*ADC_value);
     *Celsius = convert_to_Celsius(*voltage);
 }
