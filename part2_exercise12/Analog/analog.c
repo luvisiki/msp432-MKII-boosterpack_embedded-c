@@ -44,12 +44,12 @@ void config_temp(void)
     NVIC_EnableIRQ(ADC14_IRQn);
 }   
 
-void read_temp(void)
+uint16_t read_temp(void)
 {
     ADC14->CTL0 &=  ~ADC14_CTL0_ENC;                     //enc conifg.
     ADC14->CTL0 |=  ADC14_CTL0_SC | ADC14_CTL0_ENC;      //start conversation
     while(!ADC14->IFGR0 & ADC14_IFGR0_IFG0){}
-    return ADC->MEM[0];
+    return ADC14->MEM[0];
 }
 
 float convert_to_volts(uint16_t reading)

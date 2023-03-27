@@ -42,8 +42,9 @@ void main(void)
             if (check_and_clear_bu_flag()) // TODO: Choose the color if the upper buttons is pressed
             {
                 // TODO: Call library function Set_Car_Color. ATTENTON. You MUST check the correctnes of the parameter before calling Set_Car_Color().
-                Set_Car_Color(menu_option);
                 led_on(menu_option);
+                Set_Car_Color(menu_option);
+
             }
             if (check_and_clear_bj_flag()) // TODO: if joystick button end menu loop and go to next loop
             {
