@@ -10,6 +10,16 @@
 #define ADC_RES 16348                                   //ADC14 resolution 14bits.
 #define TEMP_OFFSET 35                                  //large offset
 
+#define x_max 16265
+#define x_min 26
+#define x_max_zero 8500
+#define x_min_zero 8200
+#define y_max 16265
+#define y_min 0
+#define y_max_zero 8500
+#define y_min_zero 8000
+#define sensitivity 40
+
 volatile long temp=0;
 
 
@@ -154,16 +164,6 @@ void better_control(uint16_t *x, uint16_t *y, uint16_t *z)
     */
     uint16_t x_ = 0;
     uint16_t y_ = 0;
-    uint16_t x_max = 16265;
-    uint16_t x_min = 26;
-    uint16_t x_max_zero = 8500;
-    uint16_t x_min_zero = 8200;
-    uint16_t y_max = 16265;
-    uint16_t y_min = 0;
-    uint16_t y_max_zero = 8500;
-    uint16_t y_min_zero = 8000;
-    uint16_t sensitivity = 40;
-
     read_joystick(&x_, &y_);
     printf("x:%d,y:%d \n",x_,y_);
     if (x_>x_max_zero)  
