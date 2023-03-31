@@ -1,0 +1,9 @@
+"./main.obj"
+"./startup_msp432p401r_ccs.obj"
+"./system_msp432p401r.obj"
+"./Analog/analog.obj"
+"./LED/led.obj"
+"./buttons/buttons.obj"
+"./timer/timer.obj"
+"../msp432p401r.cmd"
+-llibc.a

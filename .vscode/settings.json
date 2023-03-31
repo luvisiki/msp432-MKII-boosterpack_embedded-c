@@ -2,6 +2,10 @@
     "files.associations": {
         "*.m": "matlab",
         "analog.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "timer.h": "c",
+        "game.h": "c",
+        "buttons.h": "c",
+        "buzzer.h": "c"
     }
 }
